@@ -73,3 +73,5 @@ Navigointi
 - Kirjaudu/luotili
 
 Footer
+
+Projekti sijaitsee githubissa, linkki: https://github.com/VisualPlate/verkkokauppaProjektityo
