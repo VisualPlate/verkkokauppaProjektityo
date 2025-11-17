@@ -1,5 +1,8 @@
 Aloitus palaveri
 
+Palaverissa suunniteltiin ja mietittiin mitä asioita projektissa pitäisi olla ja mitä tulee ottaa huomioon
+muista asioista, kuten väri teemasta mietitään myöhemmin
+
 Toteutettava työ
 -2024 semifinaali (verkkokauppa)
 
@@ -56,6 +59,13 @@ Tuotteet
 - Soudattimet
 - Tuotteet
 - footer
+
+Tuote tiedot
+- Navigointi
+- Tuotteen kuva
+- Tuoteen nimi / tiedot
+- footer
+
 Navigointi 
 - Logo
 - Haku

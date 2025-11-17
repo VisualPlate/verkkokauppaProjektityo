@@ -1,0 +1,37 @@
+Landing page
+- Navigointi
+- Hero
+- Kategoriat
+- Mainokset
+- Tuoteehdotukset
+- Kaupan tiedot
+- footer
+
+Ostoskori
+- Navigointi
+- Ostokorin tuotteet
+- Hinta + maksa
+- Toimituksen tiedot
+- footer
+
+Tuotteet
+- Navigointi
+- Soudattimet
+- Tuotteet
+- footer
+
+Tuote tiedot
+- Navigointi
+- Tuotteen kuva
+- Tuoteen nimi / tiedot
+- footer
+
+Navigointi 
+- Logo
+- Haku
+- Ostoskori
+- Kirjaudu/luotili
+
+Footer
+- kaupan tiedot (osoite/kunta/postiTp)
+- yhteystiedot

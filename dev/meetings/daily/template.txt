@@ -1,0 +1,7 @@
+Päivän Tavoite
+-Tehtävä x
+-Tehtävä y
+
+Tehty päivänä
+-Tehtävä x: tekijä x
+-Tehtävä y: tekijä y

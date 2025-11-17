@@ -1,0 +1,10 @@
+Väriteema:
+- Teksti: #(hex koodi)
+- Tausta: #(hex koodi)
+
+Logo
+- Formaatti: svg, png
+- tyyli: moderni(?)
+
+Fontit
+- Arial (aloitusvaiheessa)
