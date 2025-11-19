@@ -1,0 +1,23 @@
+# Julkinen .htaccess tiedosto
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # HUOM! Muuta tähänoma tiedostosi root kansio
+    # Sitten oikea osoite on http://localhost/OMA KANSIO POLKU/frontend/index.php
+    RewriteBase /KouluProjekti/public/
+
+    #     RewriteBase /KouluProjekti/public/
+    #   Jos linux palvelimelle public_html/public/
+
+
+    # Estetään pääsy suoraan .env, .htaccess jne.
+    RewriteRule ^(\.env|\.htaccess)$ - [F,L]
+
+    # Jos tiedosto tai hakemisto ei ole olemassa, ohjataan index.php:lle
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Varmistetaan UTF-8
+AddDefaultCharset utf-8
