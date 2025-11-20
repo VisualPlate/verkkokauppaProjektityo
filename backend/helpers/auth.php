@@ -5,6 +5,7 @@
  *
  * @return bool Palauttaa true, jos käyttäjä on kirjautunut, muuten false.
  */
+
 function is_logged_in(): bool
 {
     // Varmistetaan, että sessio on käynnissä
