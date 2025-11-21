@@ -1,42 +1,189 @@
-/* Grid-container */
-.container{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  align-items: center;
-  min-height: 100vh;
-  padding: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* koko näytön korkeus */
-  
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
-.max-1200 {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
+
+
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.form-group {
-    border: 8px solid black;
-  border-radius: 60px;
-  padding: 90px;
-  width: 100%;
-  max-width: 600px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
-  min-height: 700px;
-  box-sizing: border-box;
+.row {
+    margin: 0;
+    width: 100%;
+}
+
+.col-md-6 {
+    max-width: 100% ;
+    padding: 0 ;
+    width: 100%;
+}
+
+/* Shopping cart icon */
+
+.card-header::before {
+    content: '';
+    display: block;
+      width: 40vh;   /* esim. */
+  height: 40vh;
+ background-image: url("../images/cart.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card-header h3 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
 }
 
 .card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.card-body {
+    padding: 0;
+}
+
+/* Form styling */
+.content {
     width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
-.card-header {
-    text-align: center;
+
+.form-group {
+    margin-bottom: 20px;
+    position: relative;
 }
+
+.form-group label,
+.form-roup label {
+    display: none;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 12px 15px 12px 45px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+/*käyttäjätunnus ikoni tähän */
+.form-group::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* salasana ikoni tähän*/
+.form-roup {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-roup::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* Submit button */
+.btn-primary {
+    background-color: #ffffff;
+    color: #1a3a3a;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Card footer */
+.card-footer {
+    background: transparent;
+    border: none;
+    padding: 20px 0 0;
+    margin-top: 20px;
+}
+
+.card-footer p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin: 0;
+}
+
+.card-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.card-footer a:hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
+
