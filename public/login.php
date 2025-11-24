@@ -65,42 +65,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-             <div class="card-header"><h3>Kirjaudu sisään</h3></div>
+             <div class="card-header"></div>
             <div class="card">
-                <div class="card-body">
-                    
-        <div class="content">
-                    <form action="login.php" method="post">
-                        <div class="form-group mb-3">
-                            <label for="email_or_username">Sähköposti</label>
-                            <input type="text" name="email_or_username" id="email_or_username" 
-                                class="form-control <?php echo isset($errors['email_or_username']) ? 'is-invalid' : ''; ?>" 
-                                value="<?php echo htmlspecialchars($email); ?>">
-                            <?php if (isset($errors['email_or_username'])): ?>
-                                <div class="invalid-feedback"><?php echo $errors['email_or_username']; ?></div>
-                            <?php endif; ?>
-                        
+                <div class="card-body">     
+                    <div class="content">
+                        <form action="login.php" method="post">
+                            <div class="form-group mb-3 row login-div">
+                                <img src="assets/images/login_g1.svg" class="login-icon">
+                                <input type="text" name="email_or_username" id="email_or_username" 
+                                    class="form-input <?php echo isset($errors['email_or_username']) ? 'is-invalid' : ''; ?>" 
+                                    value="<?php echo htmlspecialchars($email); ?>">
+                                <?php if (isset($errors['email_or_username'])): ?>
+                                    <div class="invalid-feedback"><?php echo $errors['email_or_username']; ?></div>
+                                <?php endif; ?>
+                            </div>
 
-                        <div class="form-roup mb-4">
-                            <label for="password">Salasana</label>
-                            <input type="password" name="password" id="password" 
-                                class="form-control <?php echo isset($errors['password']) ? 'is-invalid' : ''; ?>">
-                            <?php if (isset($errors['password'])): ?>
-                                <div class="invalid-feedback"><?php echo $errors['password']; ?></div>
-                            <?php endif; ?>
-                        </div>
-                          <button type="submit" class="btn btn-primary w-100">Kirjaudu</button>
+                            <div class="form-group mb-4 row login-div">
+                                <img src="assets/images/login_g2.svg" class="login-icon">
+                                <label for="password">Salasana</label>
+                                <input type="password" name="password" id="password" 
+                                    class="form-input <?php echo isset($errors['password']) ? 'is-invalid' : ''; ?>">
+                                <?php if (isset($errors['password'])): ?>
+                                    <div class="invalid-feedback"><?php echo $errors['password']; ?></div>
+                                <?php endif; ?>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Kirjaudu</button>
 
-                          <div class="card-footer text-center">
-                    <p>Eikö sinulla ole tiliä? <a href="register.php">Luo tili</a></p>
-                </div>
-                         </div>
-
-                       
-                    </form>
-                </div>
-
-    
+                            <div class="card-footer text-center">
+                                    <p>Eikö sinulla ole tiliä? <a href="register.php">Luo tili</a></p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

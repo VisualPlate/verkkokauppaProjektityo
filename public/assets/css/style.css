@@ -11,6 +11,15 @@ body {
     background-size: cover;
     margin: 0;
 }
+.row, .col {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+.col {
+  flex-direction: column;
+}
 .max-1200 {
     width: 10;
     max-width: 1200px;
