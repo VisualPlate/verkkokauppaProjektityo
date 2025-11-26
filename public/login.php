@@ -82,7 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <div class="form-group mb-4 row login-div">
                                 <img src="assets/images/login_g2.svg" class="login-icon">
-                                <label for="password">Salasana</label>
                                 <input type="password" name="password" id="password" 
                                     class="form-input <?php echo isset($errors['password']) ? 'is-invalid' : ''; ?>">
                                 <?php if (isset($errors['password'])): ?>
