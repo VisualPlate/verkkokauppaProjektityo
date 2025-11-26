@@ -85,13 +85,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
+<body>
+    <head>
+<link rel="stylesheet" href="assets/css/root.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/register.css">
+
+
+    </head>
 
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h3>Luo uusi käyttäjätili</h3>
+                    
                 </div>
                 <div class="card-body">
                     <?php if (!empty($errors['form'])): ?>
@@ -102,7 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <div class="form-group mb-3">
                             <label for="firstname">Etunimi</label>
-                            <input type="text" name="firstname" id="firstname"
+                            <input type="text" placeholder="Etunimi" name="firstname" id="firstname"
                                    class="form-control <?php echo isset($errors['firstname']) ? 'is-invalid' : ''; ?>"
                                    value="<?php echo htmlspecialchars($firstname ?? '') ?>">
                             <?php if (isset($errors['firstname'])): ?>
@@ -172,3 +180,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <?php include 'header_footer/footer.php'; ?>
+
+</body>

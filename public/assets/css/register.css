@@ -10,7 +10,7 @@ body {
 
 
 
-.container {
+.container  {
     width: 100%;
     max-width: 500px;
     padding: 20px;
@@ -35,13 +35,14 @@ body {
     justify-self: center;
   width: 150px;   
   height: 150px;
- background-image: url("../images/cart.png");
+ background-image: url("../images/register.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .card-header h3 {
+    margin-bottom: 200px;
     color: #ffffff;
     font-size: 24px;
     font-weight: 600;
@@ -67,12 +68,15 @@ body {
 
     margin-bottom: 20px;
     position: relative;
+     background:transparent !important;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: #ffffff solid 2px;
+    border-radius: 6px;
 }
 
 .form-group label,
-.form-roup label {
-    display: none;
-}
 
 .form-input {
     background:transparent !important;
@@ -89,53 +93,8 @@ body {
     font-size: 14px;
     box-sizing: border-box;
 }
-.login-icon {
-    width: 16px;
-    height: 16px;
-    margin: 5px;
-}
-.login-div {
-    background:transparent !important;
-    display: flex;
-    align-items: center;
-    padding: 12px;
-    border: #ffffff solid 2px;
-    border-radius: 6px;
-}
-/*käyttäjätunnus ikoni tähän */
-.form-group::before {
 
-     background: url("../images/username.png");
 
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    background-repeat: no-repeat;
-    pointer-events: none;
-}
-
-/* salasana ikoni tähän*/
-.form-roup {
-  background: url("../images/password.png");
-
-    position: relative;
-    margin-bottom: 20px;
-}
-
-.form-roup::before {
-    content: '';
-     background:transparent !important;
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    height: 18px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    z-index: 10;
-    pointer-events: none;
-}
 
 
 .btn-primary {
