@@ -76,6 +76,20 @@ body {
     border-radius: 6px;
 }
 
+.form-control {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: none !important; /* poistaa sinisen korostuksen */
+}
+
+.form-control:focus {
+    background: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+}
+
 .form-group label,
 
 .form-input {

@@ -109,38 +109,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <form action="register.php" method="post">
 
                         <div class="form-group mb-3">
-                            <label for="firstname">Etunimi</label>
                             <input type="text" placeholder="Etunimi" name="firstname" id="firstname"
                                    class="form-control <?php echo isset($errors['firstname']) ? 'is-invalid' : ''; ?>"
-                                   value="<?php echo htmlspecialchars($firstname ?? '') ?>">
+                                   value="<?php echo htmlspecialchars($firstname ?? '') ?>"
+                                   required>
                             <?php if (isset($errors['firstname'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['firstname']; ?></div>
                             <?php endif; ?>
                         </div>
 
                         <div class="form-group mb-3">
-                            <label for="lastname">Sukunimi</label>
-                            <input type="text" name="lastname" id="lastname"
+                            <input type="text" placeholder="Sukunimi" name="lastname" id="lastname"
                                    class="form-control <?php echo isset($errors['lastname']) ? 'is-invalid' : ''; ?>"
-                                   value="<?php echo htmlspecialchars($lastname ?? '') ?>">
+                                   value="<?php echo htmlspecialchars($lastname ?? '') ?>" required>
                             <?php if (isset($errors['lastname'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['lastname']; ?></div>
                             <?php endif; ?>
                         </div>
 
                         <div class="form-group mb-3">
-                            <label for="email">Sähköposti</label>
-                            <input type="email" name="email" id="email"
+                          <input type="email" placeholder="Sähköposti" name="email" id="email"
                                    class="form-control <?php echo isset($errors['email']) ? 'is-invalid' : ''; ?>"
-                                   value="<?php echo htmlspecialchars($email ?? '') ?>">
+                                   value="<?php echo htmlspecialchars($email ?? '') ?>" required>
                             <?php if (isset($errors['email'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['email']; ?></div>
                             <?php endif; ?>
                         </div>
 
                         <div class="form-group mb-3">
-                            <label for="phone">Puhelin (valinnainen)</label>
-                            <input type="text" name="phone" id="phone"
+                            <input type="text" placeholder="Puhelin (valinnainen)" name="phone" id="phone"
                                    class="form-control <?php echo isset($errors['phone']) ? 'is-invalid' : ''; ?>"
                                    value="<?php echo htmlspecialchars($phone ?? '') ?>">
                             <?php if (isset($errors['phone'])): ?>
@@ -149,18 +146,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
 
                         <div class="form-group mb-3">
-                            <label for="password">Salasana</label>
-                            <input type="password" name="password" id="password"
-                                   class="form-control <?php echo isset($errors['password']) ? 'is-invalid' : ''; ?>">
+                            <input type="password" placeholder="Salasana" name="password" id="password"
+                                   class="form-control <?php echo isset($errors['password']) ? 'is-invalid' : ''; ?>" required>
                             <?php if (isset($errors['password'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['password']; ?></div>
                             <?php endif; ?>
                         </div>
 
                         <div class="form-group mb-4">
-                            <label for="password_confirm">Vahvista salasana</label>
-                            <input type="password" name="password_confirm" id="password_confirm"
-                                   class="form-control <?php echo isset($errors['password_confirm']) ? 'is-invalid' : ''; ?>">
+                            <input type="password" placeholder="Vahvista salasana" name="password_confirm" id="password_confirm"
+                                   class="form-control <?php echo isset($errors['password_confirm']) ? 'is-invalid' : ''; ?>" required>
                             <?php if (isset($errors['password_confirm'])): ?>
                                 <div class="invalid-feedback"><?php echo $errors['password_confirm']; ?></div>
                             <?php endif; ?>
