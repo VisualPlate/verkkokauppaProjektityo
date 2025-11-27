@@ -65,9 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
+            <div class="cart-box"> 
              <div class="card-header"></div>
             <div class="card">
-                <div class="card-body">     
+                <div class="card-body">    
                     <div class="content">
                         <form action="login.php" method="post">
                             <div class="form-group mb-3 row login-div">
@@ -98,6 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </div>
 </div>
