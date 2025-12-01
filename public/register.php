@@ -93,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     </head>
-
+<div class="hero-bg">
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -174,7 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </div>
-
+</div>
 
 <?php //include 'header_footer/footer.php'; ?>
 
