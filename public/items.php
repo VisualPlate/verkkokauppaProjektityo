@@ -67,13 +67,14 @@ require_once '../backend/helpers/password_helper.php'; // Salasanan apufunktiot
                                     <h4><?=$product["price"]?></h4>
                                 </div>
                             </div>
-                        
+
                             <div class="row space-between">
                                 <form method="post">
                                     <button type="button" class="check-btn">Lisää ostoskoriin</button>
                                 </form>
-                            </div></a>
+                            </div>
                         </div>
+                        </a>
                     <?php endforeach?>
                     </div>
                 <?php endforeach?>

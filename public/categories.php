@@ -74,7 +74,7 @@ if (isset($_GET["category"])) {
                                 <button class="check-btn">Lisää ostoskoriin</button>
                             </div>
                         </div>
-                    </a>
+                            </a>
                 <?php
                 endforeach
                 ?>
