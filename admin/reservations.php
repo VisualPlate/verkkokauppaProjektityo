@@ -1,14 +1,27 @@
 <?php
 $is_getId = false;
-//get method of ID
-if (isset($_GET["type"]) && $_GET["type"] === "id"  && isset($_GET["text"]) && is_numeric($_GET["text"])) {
-    //fetches content of api
+$order = null;
+$json = null; 
+$apiPath = null; 
 
-    //api path
-    $apiPath = "../../backend/api/get_orders.php";
-    $is_getId = true;
+
+if (isset($_GET["type"]) && $_GET["type"] === "id" && isset($_GET["text"]) && is_numeric($_GET["text"])) {
+    
+
+    $apiPath = "../../backend/api/get_orders.php?id=" . intval($_GET["text"]); 
+    $json = @file_get_contents($apiPath);
+    if ($json !== false) {
+        $order = json_decode($json, true);
+        if ($order) {
+            $is_getId = true;
+        }
+    }
 }
-
+if ($json === false || $json === null) {
+    echo "<!-- API error: Could not fetch data from $apiPath -->";
+} else {
+    echo "<!-- API response: $json -->";
+}
 ?>
 
 
@@ -23,6 +36,11 @@ if (isset($_GET["type"]) && $_GET["type"] === "id"  && isset($_GET["text"]) && i
     <title>Admin</title>
 </head>
 <body>
+    <?php
+    echo "<pre>";
+print_r($order);
+echo "</pre>";
+?>
     <div class="max-1200">
         <?php
         require_once("includes/admin_nav.php");
@@ -33,7 +51,6 @@ if (isset($_GET["type"]) && $_GET["type"] === "id"  && isset($_GET["text"]) && i
                 <div class="search-nav">
                     <div class="search">
                         <select name="type" class="select-type">
-                            <option value="val1">Tyyppi</option>
                             <option value="id">ID</option>
                         </select>
                         <input type="text" name="text" class="textInput" required>
@@ -71,35 +88,38 @@ if (isset($_GET["type"]) && $_GET["type"] === "id"  && isset($_GET["text"]) && i
                         </p>
                     </div>
                 </div>
-                <div id="fetchOutput">
-                    <?php
-                    if ($is_getId):
-                        
-                    ?>
+                <?php
+               if ($is_getId):
+    if (isset($order[0])) {
+        $orderRow = $order[0];
+    } else {
+        $orderRow = $order;
+    }
+?>
                     <div class="output-row rowJS" style="padding-inline:5px" id="r1">
                         <div>
                             <p id="r1-reservationID">
-                            <?=$_GET["text"]?>
+                         <?=htmlspecialchars($order["orderID"])?>
                             </p>
                         </div>
                         <div>
                             <p id="r1-reservationDate">
-                            ${order.orderDate}
+                          <?=htmlspecialchars($order["orderDate"])?>
                             </p>
                         </div>
                         <div>
                             <p id="r1-subtotal">
-                            ${order.totalPrice}
+                           <?=htmlspecialchars($order["totalPrice"])?>
                             </p>
                         </div>
                         <div>
                             <p id="r1-reservationState">
-                            ${order.orderStatus}
+                           <?=htmlspecialchars($order["orderStatus"])?>
                             </p>
                         </div>
                         <div>
                             <p id="r1-paymentState">
-                            ${order.paymentStatus}
+                           <?=htmlspecialchars($order["paymentStatus"])?>
                             </p>
                         </div>
                     </div>
@@ -128,21 +148,21 @@ if (isset($_GET["type"]) && $_GET["type"] === "id"  && isset($_GET["text"]) && i
         const popupBg = document.getElementById("popupBg");
 
         const popupHeader = document.getElementById("popupHeader");
-
         //close function
         btnClose.addEventListener("click", function() {
             popupBg.style.display = "none";
         });
-        //add onclick to each row, so they can be clicked
+       
         document.querySelectorAll('.rowJS').forEach(row => {
-            row.addEventListener('click', function (e) {
+            row.addEventListener('click', () => {
 
                 const rowId = row.id;
                 const reservationRowId = rowId + "-reservationID";
+                const reservationElement =document.getElementById(reservationRowId);
                 
-                fetchOrdersPopup(reservationRowId.textContent);
+                fetchOrdersPopup(reservationElement.textContent);
 
-                popupHeader.textContent = "Tiedot riviltä: " + rowId;
+                popupHeader.textContent = "Tiedot riviltä: " + reservationElement.textContent;
                 popupBg.style.display = "block";
 
             });
