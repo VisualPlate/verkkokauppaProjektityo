@@ -26,49 +26,6 @@ require_once '../backend/helpers/password_helper.php'; // Salasanan apufunktiot
             <h2 class="top-margin">Tuotteet</h2>
         </div>
         <div class="col">
-<<<<<<< Updated upstream
-            <div class="row space-between nav-align">
-                <h1 class="top-margin">Kategoria1</h1>
-                <a href="categories.php" class="check-btn" style="width:120px">Enemmän</a>
-            </div>
-            <div class="categoryRow row top-margin">
-                <div class="col space-between box">
-                    <div id="row-items">
-                        <img src="assets/images/background/green.svg" alt="Kuva" class="product-img">
-                        <div class="row space-between nav-align">
-                            <h2>Makkara</h2>
-                            <h4>12.99</h4>
-                        </div>
-                    </div>
-                    <div class="row space-between">
-                        <button class="check-btn">Lisää ostoskoriin</button>
-                    </div>
-                </div>
-                <div class="col space-between box">
-                    <div id="row-items">
-                        <img src="assets/images/background/green.svg" alt="Kuva" class="product-img">
-                        <div class="row space-between nav-align">
-                            <h2>Makkara</h2>
-                            <h4>12.99</h4>
-                        </div>
-                    </div>
-                    <div class="row space-between">
-                        <button class="check-btn">Lisää ostoskoriin</button>
-                    </div>
-                </div>
-                <div class="col space-between box">
-                    <div id="row-items">
-                        <img src="assets/images/background/green.svg" alt="Kuva" class="product-img">
-                        <div class="row space-between nav-align">
-                            <h2>Makkara</h2>
-                            <h4>12.99</h4>
-                        </div>
-                    </div>
-                    <div class="row space-between">
-                        <button class="check-btn">Lisää ostoskoriin</button>
-                    </div>
-                </div>
-=======
             <?php
             // Fetch from API
             $url = "http://localhost/verkkokauppaProjektityo/backend/api/products/get_products.php";
@@ -121,7 +78,6 @@ require_once '../backend/helpers/password_helper.php'; // Salasanan apufunktiot
                     <?php endforeach?>
                     </div>
                 <?php endforeach?>
->>>>>>> Stashed changes
             </div>
         </div>
     </div>
