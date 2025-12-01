@@ -8,20 +8,7 @@ body {
     position: relative;
 }
 
-.hero-bg {
-    max-width: 2000px;
-    display: flex;
-    justify-self: left ;
-    width: 72%;
-    aspect-ratio: 16 / 9;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: 60px;
-    margin-top: 150px;
-    justify-content: flex-start;
-    align-items: center;
-     box-shadow: 0px 0px 60px 50px #152620ff;
-}
+
 
 .container  {
     width: 100%;
@@ -33,7 +20,6 @@ body {
     align-items: center;
     justify-content: center;
     justify-self: center;
-      flex-wrap: wrap;
 }
 
 .col-md-6 {
@@ -44,6 +30,7 @@ body {
 
 .card-header {
     content: '';
+    margin: 25px;
     display: flex;
     justify-self: center;
   width: 150px;   
@@ -148,7 +135,6 @@ body {
     cursor: pointer;
     margin-top: 10px;
     width: 100%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
@@ -197,11 +183,7 @@ body {
     max-width: 100%;
 }
 
-   .hero-bg {
-        width: 100%;
-        margin: 120px 0;
-         height: 300px;
-    }
+
 
 
 
