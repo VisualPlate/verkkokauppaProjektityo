@@ -2,10 +2,6 @@
 <?php
 require_once "../../config/db_connect.php";
 
-<<<<<<< Updated upstream
-$stmt = $pdo->query("SELECT * FROM products");
-echo json_encode($stmt->fetchAll());
-=======
 
 $query = "
 SELECT 
@@ -39,5 +35,4 @@ try {
     // Virhenkäsittely
     echo json_encode(["error" => "Database error: " . $e->getMessage()]);
 }
->>>>>>> Stashed changes
 ?>

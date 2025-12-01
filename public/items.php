@@ -48,7 +48,6 @@ require_once '../backend/helpers/password_helper.php'; // Salasanan apufunktiot
 
             // Loops each item and show them to user
             foreach ($data["categories"] as $category):
-                if ($data["categories"] !== null)
             ?>
                 <div class="row space-between nav-align">
                     <h1 class="top-margin"><?=$category["categoryName"]?></h1>
