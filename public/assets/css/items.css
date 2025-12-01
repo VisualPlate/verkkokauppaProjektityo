@@ -13,7 +13,7 @@ h1, h2 {margin: 0.5;}
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     min-width: 300px;
     width: 300px;
-    height: 370px;
+    min-height: 370px;
 }
 .categoryRow {
     overflow-x: auto;

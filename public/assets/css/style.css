@@ -96,4 +96,7 @@ body {
     body {
         background-position: left;
     }
+    .mob-hidden {
+      display: none;
+    }
 }
