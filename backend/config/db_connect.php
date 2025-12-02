@@ -11,8 +11,8 @@ function getDBConnection() {
     ];
 
     try {
-        $conn = new PDO($dsn, DB_USER, DB_PASS, $options);
-        return $conn;
+        $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+        return $pdo;
     } catch (PDOException $e) {
         die("Tietokantayhteys epäonnistui: " . $e->getMessage());
     }

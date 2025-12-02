@@ -8,18 +8,17 @@ body {
     position: relative;
 }
 
-
-
 .container  {
     width: 100%;
     max-width: 500px;
     padding: 20px;
     margin: 0 auto;
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     justify-self: center;
+      flex-wrap: wrap;
 }
 
 .col-md-6 {
@@ -30,7 +29,6 @@ body {
 
 .card-header {
     content: '';
-    margin: 25px;
     display: flex;
     justify-self: center;
   width: 150px;   
@@ -135,6 +133,7 @@ body {
     cursor: pointer;
     margin-top: 10px;
     width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-primary:hover {
@@ -180,9 +179,8 @@ body {
 
 
 .container {
-    max-width: 100%;
+    min-height: 100vh;
 }
-
 
 
 

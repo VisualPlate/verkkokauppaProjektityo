@@ -9,6 +9,7 @@ include "header_footer/header_frontend.php";  // Include header
 ?>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,20 +18,25 @@ include "header_footer/header_frontend.php";  // Include header
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/index.css">
 </head>
+
 <body>
     <?php
     require_once("header_footer/header.php");
     ?>
-     <div class="hero-bg">
+    <div class="hero-bg">
         <div class="hero-content">
             <div class="class-img">
                 <img src="../images/index.jpg" alt="">
             </div>
             <div class="row space-between w-100 column">
-                <h1 class = "text-primary">Ruoka <br>verkko <br> kauppa </h1>
+                <h1 class="text-primary">Ruoka <br>verkko <br> kauppa </h1>
                 <button class="class-button">Valikoima</button>
+                <?php echo "<pre>"; // <pre> tag makes output readable (preserves formatting)
+                var_dump($_SESSION);
+                echo "</pre>"; ?>
             </div>
         </div>
     </div>
 </body>
+
 </html>

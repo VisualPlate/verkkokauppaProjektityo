@@ -12,7 +12,7 @@ $email = '';
 
 // Käsitellään lomakkeen lähetys
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    $pdo = getDBConnection();
     // Puhdista syötteet
     $firstname = sanitize_input($_POST['firstname']);
     $lastname = sanitize_input($_POST['lastname']);
@@ -93,8 +93,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     </head>
-<div class="hero-bg">
-<div class="container mt-5">
+
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="cart-box"> 
