@@ -28,6 +28,6 @@ if (ini_get("session.use_cookies")) {
 session_destroy();
 
 // Ohjataan käyttäjä kirjautumissivulle
-header("Location: login.php", true, 303);
+header("Location: index.php", true, 303);
 exit;
 ?>

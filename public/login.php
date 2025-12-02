@@ -84,9 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             value="<?php echo htmlspecialchars($email); ?>">
                                         <?php if (isset($errors['email_or_username'])): ?>
                                             <div class="invalid-feedback"><?php echo $errors['email_or_username']; ?></div>
-                                            <?php echo "<pre>"; // <pre> tag makes output readable (preserves formatting)
-                                                var_dump($_SESSION);
-                                                echo "</pre>"; ?>
                                         <?php endif; ?>
                                     </div>
 
