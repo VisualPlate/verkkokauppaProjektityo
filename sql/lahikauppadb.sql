@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 20.11.2025 klo 08:15
+-- Generation Time: 04.12.2025 klo 09:42
 -- Palvelimen versio: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -113,7 +113,8 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`cartID`, `userID`, `createdAt`) VALUES
-(1, 1, '2025-11-19 13:11:11');
+(1, 1, '2025-11-19 13:11:11'),
+(4, 4, '2025-12-02 12:53:37');
 
 -- --------------------------------------------------------
 
@@ -133,7 +134,12 @@ CREATE TABLE `cart_items` (
 
 INSERT INTO `cart_items` (`cartID`, `productID`, `amount`) VALUES
 (1, 1, 2),
-(1, 2, 1);
+(1, 2, 1),
+(4, 1, 4),
+(4, 2, 1),
+(4, 3, 2),
+(4, 4, 2),
+(4, 7, 2);
 
 -- --------------------------------------------------------
 
@@ -153,8 +159,7 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
 (2, 'Broileri'),
 (4, 'Makkarat'),
-(1, 'Naudanliha'),
-(3, 'Sianliha');
+(1, 'Naudanliha');
 
 -- --------------------------------------------------------
 
@@ -276,7 +281,9 @@ INSERT INTO `products` (`productID`, `name`, `price`, `categoryID`, `stock`, `we
 (1, 'Naudan jauheliha', 8.90, 1, 120, 1.00, 'Paikallinen lähitila', 'Tuore 100% kotimainen naudan jauheliha', '2025-11-19 13:11:11'),
 (2, 'Naudan fileepihvi', 28.50, 1, 40, 0.30, 'Paikallinen lähitila', 'Murea premium-fileepihvi', '2025-11-19 13:11:11'),
 (3, 'Broilerin rintafile', 12.90, 2, 80, 1.00, 'Kotimainen tila', 'Tuore broilerin rintafile', '2025-11-19 13:11:11'),
-(4, 'Grillimakkara', 5.50, 4, 200, 0.50, 'Kotimainen maatila', 'Perinteinen grillimakkara', '2025-11-19 13:11:11');
+(4, 'Grillimakkara', 5.50, 4, 200, 0.50, 'Kotimainen maatila', 'Perinteinen grillimakkara', '2025-11-19 13:11:11'),
+(5, 'Vegenakki', 11.70, 4, 40, 0.35, 'Paikallinen lähitila', 'Vegaanne versio nakista', '2025-12-03 12:22:27'),
+(7, 'Kanan naudanliha', 9.80, 2, 500, 1.00, 'Paikallinen lähitila', 'Tuoretta kanan jauhelihaa', '2025-12-03 12:24:10');
 
 -- --------------------------------------------------------
 
@@ -295,10 +302,12 @@ CREATE TABLE `product_images` (
 --
 
 INSERT INTO `product_images` (`imageID`, `productID`, `imagePath`) VALUES
-(1, 1, 'images/jauheliha.jpg'),
-(2, 2, 'images/fileepihvi.jpg'),
-(3, 3, 'images/rintafile.jpg'),
-(4, 4, 'images/grillimakkara.jpg');
+(1, 1, 'public/assets/images/jauheliha.jpg'),
+(2, 2, 'public/assets/images/fileepihvi.jpg'),
+(3, 3, 'public/assets/images/rintafile.jpg'),
+(4, 4, 'public/assets/images/grillimakkara.jpg'),
+(5, 7, 'public/assets/images/kananjauheliha.jpg'),
+(6, 5, 'public/assets/images/vegenakki.jpg');
 
 -- --------------------------------------------------------
 
@@ -321,7 +330,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userID`, `email`, `firstname`, `lastname`, `phone`, `passHash`, `createdAt`) VALUES
-(1, 'test@gmail.com', 'Matti', 'Meikäläinen', '0401231234', 'test', '2025-11-19 13:11:11');
+(1, 'test@gmail.com', 'Matti', 'Meikäläinen', '0401231234', 'test', '2025-11-19 13:11:11'),
+(4, 'topi@gmail.com', 'topi', 'topi', '', '$2y$10$iHHgppEhY1jiNZ6/zq4bIOXFE9SlH16zhEWiL60vAywIKtuxSxWyG', '2025-12-02 12:53:16');
 
 --
 -- Indexes for dumped tables
@@ -451,7 +461,7 @@ ALTER TABLE `admin_roles`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cartID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -475,19 +485,19 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `product_images`
 --
 ALTER TABLE `product_images`
-  MODIFY `imageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `imageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Rajoitteet vedostauluille

@@ -21,7 +21,7 @@ if (file_exists($envPath)) {
 define('DB_HOST', $_ENV['DB_HOST'] ?? 'localhost');
 define('DB_USER', $_ENV['DB_USER'] ?? 'root');
 define('DB_PASS', $_ENV['DB_PASS'] ?? '');
-define('DB_NAME', $_ENV['DB_NAME'] ?? 'lahikauppadb');
+define('DB_NAME', $_ENV['DB_NAME'] ?? 'KouluDatabase');
 
 define('APP_ENV', $_ENV['APP_ENV'] ?? 'development');
 define('APP_DEBUG', filter_var($_ENV['APP_DEBUG'] ?? false, FILTER_VALIDATE_BOOLEAN));

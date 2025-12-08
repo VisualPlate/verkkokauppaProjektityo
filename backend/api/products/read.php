@@ -1,5 +1,5 @@
-<!-- Hae kaikki tuotteet TODO: tee sama muille -->
 <?php
+header('Content-Type: application/json');
 require_once "../../config/db_connect.php";
 
 
@@ -7,12 +7,9 @@ $query = "
 SELECT 
     p.*,
     pi.imagePath
-    c.
 FROM products p
 LEFT JOIN product_images pi
     ON pi.productID = p.productID
-LEFT JOIN category c
-    ON p.categoryID = c.categoryID
 GROUP BY p.productID;
 ";
 // Yhteys ja kyselyn suoritus

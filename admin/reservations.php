@@ -1,29 +1,53 @@
 <?php
 $is_getId = false;
-$order = null;
-$json = null; 
-$apiPath = null; 
+require_once("includes/fetchDomain.php");
+//get method of ID
+if (isset($_GET["type"]) && $_GET["type"] === "id"  && isset($_GET["text"])) {
+    //fetches content of api
 
+    //api path. $domain being the root folder where files exist
+    $getId = $_GET["text"];
+    if ($getId === "kaikki" || $getId === "all") {
+        $getId = "a";
+    }
 
-if (isset($_GET["type"]) && $_GET["type"] === "id" && isset($_GET["text"]) && is_numeric($_GET["text"])) {
-    
+    $apiPath = $domain . "backend/api/orders/get_orders.php?order_id=$getId";
+    $is_getId = true;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_URL, $apiPath);
 
-    $apiPath = "../../backend/api/get_orders.php?id=" . intval($_GET["text"]); 
-    $json = @file_get_contents($apiPath);
-    if ($json !== false) {
-        $order = json_decode($json, true);
-        if ($order) {
-            $is_getId = true;
-        }
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    // Decode JSON to associative array
+    $data = json_decode($result, true);
+
+    // Check if decoding worked
+    if (!$data) {
+        echo "Invalid JSON or empty response";
+        exit;
+    }
+} else {
+    $apiPath = $domain . "backend/api/orders/get_orders.php?order_id=a";
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_URL, $apiPath);
+
+    $result = curl_exec($ch);
+    curl_close($ch);
+
+    // Decode JSON to associative array
+    $data = json_decode($result, true);
+
+    // Check if decoding worked
+    if (!$data) {
+        echo "Invalid JSON or empty response";
+        exit;
     }
 }
-if ($json === false || $json === null) {
-    echo "<!-- API error: Could not fetch data from $apiPath -->";
-} else {
-    echo "<!-- API response: $json -->";
-}
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,10 +74,11 @@ echo "</pre>";
             <form method="get">
                 <div class="search-nav">
                     <div class="search">
+                        <input type="text" name="text" class="textInput" placeholder="Haku" required>
                         <select name="type" class="select-type">
+                            <option value="val1" disabled selected>Tyyppi</option>
                             <option value="id">ID</option>
                         </select>
-                        <input type="text" name="text" class="textInput" required>
                     </div>
                     <div class="btn-search">
                         <button type="submit">Hae</button>
@@ -88,6 +113,16 @@ echo "</pre>";
                         </p>
                     </div>
                 </div>
+<<<<<<< HEAD
+                <div id="fetchOutput">
+                    <?php
+                        foreach ($data as $row):
+                    ?>
+                    <div class="output-row rowJS" style="padding-inline:5px" id="r<?=$row["orderID"]?>">
+                        <div>
+                            <p id="r1-reservationID">
+                                <?=$row["orderID"]?>
+=======
                 <?php
                if ($is_getId):
     if (isset($order[0])) {
@@ -100,36 +135,106 @@ echo "</pre>";
                         <div>
                             <p id="r1-reservationID">
                          <?=htmlspecialchars($order["orderID"])?>
+>>>>>>> parent of 9573373 (a)
                             </p>
                         </div>
                         <div>
                             <p id="r1-reservationDate">
+<<<<<<< HEAD
+                                <?=$row["orderDate"]?>
+=======
                           <?=htmlspecialchars($order["orderDate"])?>
+>>>>>>> parent of 9573373 (a)
                             </p>
                         </div>
                         <div>
                             <p id="r1-subtotal">
+<<<<<<< HEAD
+                                <?=$row["totalPrice"]?>
+=======
                            <?=htmlspecialchars($order["totalPrice"])?>
+>>>>>>> parent of 9573373 (a)
                             </p>
                         </div>
                         <div>
                             <p id="r1-reservationState">
+<<<<<<< HEAD
+                                <?=$row["orderStatus"]?>
+=======
                            <?=htmlspecialchars($order["orderStatus"])?>
+>>>>>>> parent of 9573373 (a)
                             </p>
                         </div>
                         <div>
                             <p id="r1-paymentState">
+<<<<<<< HEAD
+                                <?=$row["paymentStatus"]?>
+=======
                            <?=htmlspecialchars($order["paymentStatus"])?>
+>>>>>>> parent of 9573373 (a)
                             </p>
                         </div>
                     </div>
                     <?php
+<<<<<<< HEAD
+                        endforeach;
+=======
                     endif
+>>>>>>> parent of 9573373 (a)
                     ?>
                 </div>
             </div>
         </div>
     </div>
+<<<<<<< HEAD
+    <div class="popup-bg" id="popup" style="display:none">
+        <div class="middle-popup col">
+            <div class="row space-between">
+                <h1>Tilauksen <span id="rowName"></span> tiedot</h1>
+                <button type="button" class="btn-exit" id="btnClose">X</button>
+            </div>
+            <div class="col">
+                <div class="row space-between">
+                    <p>orderID</p>
+                    <p id="orderID"></p>
+                </div>
+                <div class="row space-between">
+                    <p>orderDate</p>
+                    <p id="orderDate"></p>
+                </div>
+                <div class="row space-between">
+                    <p>totalPrice</p>
+                    <p id="totalPrice"></p>
+                </div>
+                <div class="row space-between">
+                    <p>orderStatus</p>
+                    <p id="orderStatus"></p>
+                </div>
+                <div class="row space-between">
+                    <p>paymentStatus</p>
+                    <p id="paymentStatus"></p>
+                </div>
+                <div class="row space-between">
+                    <p>productIds</p>
+                    <p id="productIds"></p>
+                </div>
+                <div class="row space-between">
+                    <p>productAmounts</p>
+                    <p id="productAmounts"></p>
+                </div>
+                <div class="row space-between">
+                    <p>productNames</p>
+                    <p id="productNames"></p>
+                </div>
+                <div class="row space-between">
+                    <p>productPrices</p>
+                    <p id="productPrices"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/reservation.js"></script>
+=======
     <div class="popup-div" id="popupBg" style="display:none;">
         <div class="middle-popup" id="popup">
             <div class="row space-between" style="background-color:#2b2b2b">
@@ -169,5 +274,6 @@ echo "</pre>";
         });
     </script>
     <script src="assets/js/fetchOrdersPopup.js"></script>
+>>>>>>> parent of 9573373 (a)
 </body>
 </html>
